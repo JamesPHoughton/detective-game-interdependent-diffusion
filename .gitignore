@@ -1,3 +1,19 @@
+# Experiment Specific
+sensitive/
+backup/
+results-sensitive/
+
+# OS
+.DS_Store
+
+
+# Python
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+
+# Defaults
+
 # Logs
 logs
 *.log
