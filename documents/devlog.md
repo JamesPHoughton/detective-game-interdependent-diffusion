@@ -11,7 +11,7 @@ Demoed drag-and-drop gameplay and basic clue pattern for lab group. Everything b
 
 
 ## May 15 - Integration Test
-Ran single treatment game as a test of the platform. Asked for a text description of what players thought had happened. 
+Ran single treatment game as a test of the platform. Asked for a text description of what players thought had happened.
 
 Did a poor job minimizing penetration of outside biases (e.g. "Ramirez" more likely than "Green" to have committed crime). Need to pre-test the clue elements.
 
@@ -41,12 +41,12 @@ Dropdown box survey is not great. It forces diversity, as you can only pick one,
 ## Oct. 1, 2019 - Pilot
 Matched pair game again, seems to be working. Clues are 'spur' clues, but I didn't do the pretest very well (i.e. the things I asked in the pretest questions didn't correspond carefully to what I actually used in the game.)
 
-Added sliders, which gets much more nuanced picture of players' confidence in each clue element. Sliders have default value, which is right in the middle on maximum uncertainty. But, screen forces you to enter a value on all sliders, so this artificially pushes the answers away from the middle. 
+Added sliders, which gets much more nuanced picture of players' confidence in each clue element. Sliders have default value, which is right in the middle on maximum uncertainty. But, screen forces you to enter a value on all sliders, so this artificially pushes the answers away from the middle.
 
 
 ## Nov. 27, 2019 - Pilot
-Include Abdullah, so he could understand the gameplay. 
-Sliders are blank (no default value), but error in formatting of "make-the-case" page leaves off a slider label. 
+Include Abdullah, so he could understand the gameplay.
+Sliders are blank (no default value), but error in formatting of "make-the-case" page leaves off a slider label.
 
 Realize I am using client-side time for event logging, means that I can't trust the order in which people make their decisions, and so hazard regressions for this and prior games are not credible.
 
@@ -60,6 +60,6 @@ Run again, code same as Dec. 11. Use meteor/galaxy's client side error reporting
 
 Realize that the control 'spur' clues are so unrelated to the game that they don't get adopted, and so are not a very good control. The language used decreases the salience of the information. For example, where in the treatment game I say "the *clothing* was found with *the tool*" in the treatment I have been saying "someone wearing the *clothing* was seen on *some street*". A more parallel clue could be "the *clothing* was found on *some street*", which is also more salient in the context of a mystery. Making updates. Run another pilot, or ship it?
 
-Some issues bonusing workers. Need to debug.
+What we really want is for the average spoke clue to be adopted the same number of times in the treatment and the control condition, so that any effect on polarization or similarity is due to which clues get adopted, not the number of clues that get adopted.
 
-
+Some issues with the bonusing postprocessor. Got it worked out?

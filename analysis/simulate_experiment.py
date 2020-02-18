@@ -1,3 +1,5 @@
+# this is out of date, and no longer generates data that works for the analysis
+
 import numpy as np
 import networkx as nx
 import json
@@ -11,7 +13,7 @@ def play(game_data, n_steps=100, treatment_id="", adopt=None, forget=None):
     """ play a single round of the game """
 
     def setup_game(game_data):
-        # set up agents    
+        # set up agents
         g = nx.from_dict_of_lists(game_data['neighbors'])
 
         # give starting information

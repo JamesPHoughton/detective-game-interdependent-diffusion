@@ -12,6 +12,10 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 
+
+# Excel
+~*
+
 # Defaults
 
 # Logs
