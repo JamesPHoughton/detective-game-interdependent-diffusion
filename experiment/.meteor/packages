@@ -22,3 +22,4 @@ empirica:core
 empirica:slider
 mdg:meteor-apm-agent
 meteorhacks:zones
+jquery

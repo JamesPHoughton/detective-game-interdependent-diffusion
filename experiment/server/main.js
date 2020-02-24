@@ -1,5 +1,4 @@
 import Empirica from "meteor/empirica:core";
-
 import "./callbacks.js";
 import "./bots.js";
 
