@@ -28,7 +28,7 @@ import json
 import yaml
 import datetime
 
-root_dir = "setup/games/"
+root_dir = "games/"
 
 
 def make_matched_pair():
@@ -50,7 +50,7 @@ def make_matched_pair():
     np.random.shuffle(player_positions)
 
     # make clues
-    clues_spreadsheet = "setup/Clues.xlsx"
+    clues_spreadsheet = "Clues.xlsx"
 
     potential_nodes_df = pd.read_excel(
         clues_spreadsheet, sheet_name="Nodes List", dtype=str)
@@ -273,7 +273,7 @@ def generate_experiment_data_file(replications=2):
         '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
     config["factors"].append({
         "_id": playerCount_factor_id,
-        "name": "run_%i_player" % n_players * 2,
+        "name": "run_%i_player" % (n_players * 2),
         "value": n_players * 2,
         "factorTypeId": playerCount_factor_type_id
     })

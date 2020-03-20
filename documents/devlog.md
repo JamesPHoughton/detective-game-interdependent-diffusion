@@ -63,3 +63,8 @@ Realize that the control 'spur' clues are so unrelated to the game that they don
 What we really want is for the average spoke clue to be adopted the same number of times in the treatment and the control condition, so that any effect on polarization or similarity is due to which clues get adopted, not the number of clues that get adopted.
 
 Some issues with the bonusing postprocessor. Got it worked out?
+
+## Feb. 25, 2020 - Pilot
+Used updated spur clues from 4th round of pretest.
+
+Decided to add a dimension for investigating the relative effect of network structure. This way we can say - Interdependence gets you $\Delta x$ compared to baseline, clustering and longer path lengths get you $\Delta y$ compared to baseline, and their interaction gets you an additional $\Delta xy$. This makes the rhetorical structure of the paper more symmetric, as I start by saying that we typically look at network structure, but ignore belief structure. Now we can look at both.
