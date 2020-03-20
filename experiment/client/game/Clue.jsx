@@ -10,7 +10,7 @@ const Container = styled.div`
   background-color: white;
   max-width: 200px;
   background-color: ${props => (props.fade
-                                ? '#EEEEEE'
+                                ? '#DDDDDD'
                                 : 'white'
                                 )};
 `

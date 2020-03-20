@@ -84,6 +84,11 @@ export default class InstructionStepOne extends React.Component {
                 rearrange your notebook whenever you like.
                 </p>
                 <p>
+                When you drag a collaborator's clue into your notebook, it will
+                still be visible to you in the "Information from your collaborators",
+                but will be shaded grey.
+                </p>
+                <p>
                 Your collaborators can see your "leads". If they think you are
                 on the right track, they can add your clues to their
                 notebooks to share with other team members.
