@@ -8,7 +8,7 @@ Empirica.bot("bob", {
 
   // Called during each stage at tick interval (~1s at the moment)
   onStageTick(bot, game, round, stage, secondsRemaining) {
-    period = 10  // ticks (seconds) btw actions on average
+    period = 6  // ticks (seconds) btw actions on average
     if (Math.random() < 1/period) {
 
       // collect exposed clues

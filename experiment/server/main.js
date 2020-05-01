@@ -11,7 +11,10 @@ var fs = require('fs');
 // and the players. You can also get/set initial values on your game, players,
 // rounds and stages (with get/set methods), that will be able to use later in
 // the game.
-Empirica.gameInit((game, treatment, players) => {
+Empirica.gameInit(game => {
+  const treatment = game.treatment;
+  const players = game.players;
+  
   if (treatment.playerCount == 3){  // for testing
      var gameData = require('./games/game_data_3_player_no_control.json');
   } else {

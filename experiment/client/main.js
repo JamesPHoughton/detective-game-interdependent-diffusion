@@ -15,6 +15,11 @@ import ExitSurvey from "./exit/PilotExitSurvey";
 import Thanks from "./exit/Thanks";
 import Sorry from "./exit/Sorry";
 
+
+import NoBatch from "./NoBatch.jsx"
+
+Empirica.noBatch(NoBatch);
+
 // Set the Consent Component you want to present players (optional).
 Empirica.consent(Consent);
 
