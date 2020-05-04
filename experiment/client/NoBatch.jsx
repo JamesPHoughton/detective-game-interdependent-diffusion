@@ -6,14 +6,18 @@ import { Redirect } from 'react-router-dom'
 
 export default class NoBatch extends React.Component {
   componentDidMount(){
-    window.location.replace('http://pilot.meteorapp.com')
+    const thisURL = window.location['href'];
+    const newURL = thisURL.replace(window.location['origin'], "http://pilot.meteorapp.com");
+    window.location.replace(newURL)
   }
 
   render() {
+    const thisURL = window.location['href'];
+    const newURL = thisURL.replace(window.location['origin'], "http://pilot.meteorapp.com");
     return (
       <div>
         <h3> The primary game server is full, please click below to access overflow server:</h3>
-        <a href='http://pilot.meteorapp.com'/>
+        <p><a href={newURL}>{newURL}</a></p>
       </div>
     );
   }
