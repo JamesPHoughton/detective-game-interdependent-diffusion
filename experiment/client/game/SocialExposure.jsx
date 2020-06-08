@@ -29,10 +29,10 @@ export default class SocialExposure extends React.Component {
     const alterIDs = player.get("alterIDs");
     var leads = player.get("notebooks")["promising_leads"]["clueIDs"];
     var deads = player.get("notebooks")["dead_ends"]["clueIDs"];
-    
+
     return (
       <Container>
-        <Title>Information from your collaborators</Title>
+        {alterIDs.length > 0 && <Title>Information from your collaborators</Title>}
         <NeighborList>
         {alterIDs.map((alterID, index) => {
             const alter = _.find(game.players, p=>p._id == alterID);

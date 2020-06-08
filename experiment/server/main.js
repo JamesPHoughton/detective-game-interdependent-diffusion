@@ -14,7 +14,7 @@ var fs = require('fs');
 Empirica.gameInit(game => {
   const treatment = game.treatment;
   const players = game.players;
-  
+
   if (treatment.playerCount == 3){  // for testing
      var gameData = require('./games/game_data_3_player_no_control.json');
   } else {
@@ -57,6 +57,11 @@ Empirica.gameInit(game => {
 
 
   const round = game.addRound();
+  round.addStage({
+    name: "memo",
+    displayName: "Memo",
+    durationInSeconds: 60
+  })
   round.addStage({
       name: "response",
       displayName: "Response",

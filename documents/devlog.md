@@ -68,3 +68,48 @@ Some issues with the bonusing postprocessor. Got it worked out?
 Used updated spur clues from 4th round of pretest.
 
 Decided to add a dimension for investigating the relative effect of network structure. This way we can say - Interdependence gets you $\Delta x$ compared to baseline, clustering and longer path lengths get you $\Delta y$ compared to baseline, and their interaction gets you an additional $\Delta xy$. This makes the rhetorical structure of the paper more symmetric, as I start by saying that we typically look at network structure, but ignore belief structure. Now we can look at both.
+
+### May 5-7 - Pilot
+Purpose of this set of 3 quad games (2 levels of belief interaction, 2 levels of clustering in the network) was to estimate the number of games to run in order to get sufficient power to assess the hypothesis.
+
+Reviewing the games, there seems to be lots of noise, so if there is an effect to be seen, it would require more games than I can afford.
+
+There are several possible reasons for this
+1. Theory is incorrect
+ - Ie, something about actual human belief propagation invalidates the results of the simulation theory. (e.g. complex contagion result breaks down when you allow small amounts of spontaneous transmission)
+ - Understood mechanisms are incorrect - i.e. agreement cascades don't lead to polarization even when they happen, but something else was happening in my simulation that I wasn't able to isolate, and which creates the behavior I was seeing in the simulation.
+ - It could be that there is always just lots of noise, and the best experiment would still need lots of trials to see an effect. That might mean that the effect itself, even if it exists, is probably of little consequence for actual social contagion, or doesn't give much insight.
+
+2. Technical problems with experiment analysis
+ - It may be that the code I'm using to post-process the experiments has a bug, and that if I found the bug, I would see the expected effect
+ - It could be that I'm not analyzing on the right variables (ie, just the core clues, vs all clues, and at which times, and what should be the baselines for comparison)
+ - The measures themeselves could be poor estimates of the polarization phenomenon (I used them in the simulation partly because they are simple to explain, which is correct for a theory-building paper, but may not be optimal for an empirical one.)
+ - It could be that with the small number of beliefs, there is not enough 'resolution' to see the polarization
+
+ To check these, break down the code into testable chunks (should do anyways), list all the various combinations of operationalizations of the outcome measures given the experimental design, and try against existing pilot data or in simulations.
+
+ Bootstrap confidence intervals for each measurement of polarization, drawing from the population of players. Compare the variance in the polarization measure to the total measurement, and the expected effect size. (ie, PC1 may carry 30% of variance, effect size may be 10-15%. If bootstrap variance in 20%, may need a larger population...)
+
+3. Problems with experiment parameters
+ - Parameters: number of players, number of starting beliefs each, length of time, number of beliefs total, size of semantic network, redundancy of beliefs
+ - In the theoretical work, I have already seen how the effect varies with parameter settings. For example. in parameter regimes where no contagion takes place, there is no difference between treatment and control. When contagion is too complete, all beliefs are adopted, so that there is no difference between treatment and control. In between, there are varying levels of effect that depend on the parameters
+ - It could be that with the small number of players, there is not enough network space for camps to form. (Small network is argument for it's presence in larger groups if observed here, though.)
+
+ To check these, simulate experiment as it is implemented, either using triangle closing decision rule, hazard rate model, or neural network model. Vary the parameters to see if a different set would give larger observed effects.
+
+
+4. Problems with experiment design/conceptualization
+ - Perhaps the treatment and control do not replicate conditions of interdependence and independence closely enough.
+ - It could be that the control condition doesn't block interdependence well enough, because there is still the familiarity mechanism in play. The more times an individual has seen a rim node, the more likely they are to adopt clues containing rim nodes. This could introduce enough of the agreement cascade mechanism that control conditions are behaving like interdependent conditions. It may be that i'm incorrect in assuming that just analyzing on the spoke clues eliminates the effect of the familiarity mechanism. I haven't actually done simulations including the similarity mechanism. To evaluate,
+ - It could be that the interdependent condition doesn't replicate conditions of interdependence as the game is actually played. For example, as we tell individuals in advance where the theft occurred, the spoke clues are preferred over the cross-link clues. If individuals first adopt spoke clues, and then fill in the cross-links that reinforce what they believe, then the spoke clues (diffusing first) would be diffusing essentially independently. (Or, dependently on the prior belief in the object being stolen from the crime scene.)  The cross-link clues might then be diffusing dependently. To evaluate, plot adoption of spokes in 15s interval and also of spurs. plot probability that first mention of rim element is in a spoke adoption…
+
+
+Explore:
+number of beliefs adopted over time (spoke + spur/cross-link)
+number of beliefs adopted vs polarization measures (at each timestep?)
+polarization measures over time.
+
+
+### Other outcomes / todos
+- The double negative in the intro screens still seems to trip up a lot of people. People in abdullah's class don't think it's necessary.
+- put the payout on the thanks screen

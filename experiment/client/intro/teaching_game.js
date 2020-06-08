@@ -1,28 +1,25 @@
 export const clues = {
-  'cl1': {id: 'cl1', content: 'A likely false clue'},
-  'cl2': {id: 'cl2', content: 'This clue is probably irrelevant'},
+  'cl1': {id: 'cl1', content: 'A false clue'},
+  'cl2': {id: 'cl2', content: 'An irrelevant clue'},
   'cl3': {id: 'cl3', content: 'A true and useful clue'},
-  'cl4': {id: 'cl4', content: 'This clue is obviously false'},
-  'cl5': {id: 'cl5', content: 'This clue is far-fetched'},
-  'cl6': {id: 'cl6', content: 'This clue is not unhelpful'},
   'cl7': {id: 'cl7', content: 'A very helpful clue'}
 }
 
 export const solution = {
-  'promising_leads':['cl3', 'cl7', 'cl6'],
-  'dead_ends':['cl1', 'cl4', 'cl5', 'cl2'],
+  'promising_leads':['cl3', 'cl7'],
+  'dead_ends':['cl1', 'cl2'],
 }
 
 const player_notebooks = {
     'promising_leads': {
       id: 'promising_leads',
       title: 'Promising Leads',
-      clueIDs: ['cl1', 'cl2'],
+      clueIDs: ['cl1'],
     },
     'dead_ends': {
       id: 'dead_ends',
       title: 'Dead Ends',
-      clueIDs: [],
+      clueIDs: ['cl3'],
     },
 }
 
@@ -34,12 +31,12 @@ const alter_notebooks = {
   1:{'promising_leads': {
       id: 'promising_leads',
       title: 'Promising Leads',
-      clueIDs: ['cl3', 'cl7', 'cl1'],
+      clueIDs: ['cl7', 'cl2', 'cl1'],
     }},
   2:{'promising_leads': {
       id: 'promising_leads',
       title: 'Promising Leads',
-      clueIDs: ['cl5', 'cl6'],
+      clueIDs: ['cl3', 'cl2'],
     }},
 }
 
@@ -50,6 +47,7 @@ class PlayerDummy {
       "avatar": "/avatars/jdenticon/" + _id,
       "notebooks": notebooks,
       "notebookOrder": ['promising_leads', 'dead_ends'],
+      "progress": 0,
     }
     this.loglist = [];
     this.id = id;
@@ -77,7 +75,7 @@ export class GameDummy {
       new PlayerDummy(1, "top_alt", [], alter_notebooks[1]),
       new PlayerDummy(2, "bottom_alt", [], alter_notebooks[2]),
     ]
-    this.rounds = [{index:0, stages:[{name:"response"}]}]
+    this.rounds = [{index:0, stages:[{name:"training"}]}]
   }
 
   get = key => this.data[key]

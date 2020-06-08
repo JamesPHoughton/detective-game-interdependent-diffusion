@@ -4,19 +4,9 @@ import Timer from "./Timer.jsx";
 
 export default class PlayerProfile extends React.Component {
 
-
-  render() {
-    const { player, game, stage } = this.props;
-    var nodes = game.get("nodes")
-    var crimeScene = nodes['CrimeScene_1']
-    var stolenObject = nodes['StolenObject_1']
-    var fStolenObject = stolenObject.replace(/the /, "")
-
-
+  renderGameSidebar(fStolenObject, crimeScene) {
     return (
-      <aside className="player-profile">
-        <img src="player_icon.png" height="100px"/>
-
+      <>
         <h3>Your Assignment:</h3>
         <p>
         A priceless <strong> {fStolenObject} </strong> has been stolen
@@ -33,7 +23,30 @@ export default class PlayerProfile extends React.Component {
         <p>
         There is no reward or penalty for "dead ends".
         </p>
+      </>
+  )}
 
+  renderMemoSidebar() {
+    return (
+      <>
+        Please read the attached police bulletin prior to the game.
+      </>
+    )
+  }
+
+  render() {
+    const { player, game, stage } = this.props;
+    var nodes = game.get("nodes")
+    var crimeScene = nodes['CrimeScene_1']
+    var stolenObject = nodes['StolenObject_1']
+    var fStolenObject = stolenObject.replace(/the /, "")
+
+
+    return (
+      <aside className="player-profile">
+        <img src="player_icon.png" height="100px"/>
+        {stage.name != "memo" && this.renderGameSidebar(fStolenObject, crimeScene)}
+        {stage.name != "memo" && this.renderMemoSidebar(fStolenObject, crimeScene)}
         <Timer stage={stage} />
       </aside>
     );

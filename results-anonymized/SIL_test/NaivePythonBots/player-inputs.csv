@@ -1,0 +1,3 @@
+﻿_id,playerId,gameId,createdAt,data.suspect_1,data.suspect_2,data.suspect_3,data.appearance_1,data.appearance_2,data.clothing_1,data.clothing_2,data.tool_1,data.tool_2,data.vehicle_1,data.vehicle_2,data.confidence,data.consensus,data.age,data.gender,data.education,data.strength,data.fair,data.time,data.feedback
+NxZTF6AL4TvtmCRgo,nrDvXXo2EgcwM2KfR,pw7gRAmmbBaTGRfXi,2020-05-21T20:09:19Z,21,33,38,42,51,32,30,52,68,39,46,31,43,,,,,,,
+9SyFGmy9i2R7pAJ2d,nrDvXXo2EgcwM2KfR,pw7gRAmmbBaTGRfXi,2020-05-21T20:09:23Z,,,,,,,,,,,,,,,,,,,,

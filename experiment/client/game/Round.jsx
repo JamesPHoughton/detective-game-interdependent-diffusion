@@ -1,6 +1,7 @@
 import React from "react";
 import PlayerProfile from "./PlayerProfile.jsx";
 import SocialExposure from "./SocialExposure.jsx";
+import Exposition from "./Exposition.jsx";
 import Workspace from "./Workspace";
 import {DragDropContext} from "react-beautiful-dnd";
 import styled from "styled-components";
@@ -185,15 +186,14 @@ export default class Round extends React.Component {
     return (
       <div className="round">
         <div className="content" onMouseMove={this.mouseIsMoved}>
-          {round != "training"
-           ? <PlayerProfile player={player} stage={stage} game={game} />
-           : null
-          }
+          {stage.name != "training" && <PlayerProfile player={player} stage={stage} game={game} />}
+
           <DragDropContext onDragEnd={this.onDragEnd}
                            onDragStart={this.onDragStart}>
             <Container>
-              <Workspace game={game} player={player} />
-              <SocialExposure stage={stage} player={player} game={game} />
+              {stage.name != "memo" && <Workspace game={game} player={player} /> }
+              {stage.name != "memo" && <SocialExposure stage={stage} player={player} game={game} />}
+              {stage.name == "memo" && <Exposition player={player} game={game} />}
             </Container>
           </DragDropContext>
         </div>

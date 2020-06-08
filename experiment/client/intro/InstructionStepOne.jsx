@@ -2,6 +2,7 @@ import React from "react";
 import Round from "../game/Round.jsx"
 import styled from 'styled-components';
 import {GameDummy, solution, clues} from './teaching_game.js'
+import Expand from 'react-expand-animated';
 
 const Description = styled.div`
   max-width: 650px;
@@ -17,38 +18,53 @@ const Boxed = styled.div`
   max-width: 700px;
 `
 
-const Clue = styled.div`
-  border: 1px solid lightgrey;
-  border-radius: 2px;
-  padding: 8px;
-  margin-bottom: 8px;
-  background-color: white;
-  display: inline-block;
+const DisplayText = styled.div`
+  color: ${props => (props.active ? "black" : "grey")}
+  transition: color 1s ease,
 `
 
 
+
 export default class InstructionStepOne extends React.Component {
-  componentDidMount() {
-    document.addEventListener("keydown", this.handleKeyDown)
+
+
+  renderStep0(progress) {
+    return (
+      <DisplayText active={progress == 0}>
+        <h3> Step 1: </h3>
+        <p> Below is a "Detectives Notebook" containing a number of clues.</p>
+        <ul>
+          <li>Drag true and useful clues into the <strong> "Promising Leads" </strong> section of the notebook</li>
+          <li>Drag false or irrelevant clues into the <strong> "Dead Ends" </strong> section</li>
+        </ul>
+      </DisplayText>
+    )
   }
 
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleKeyDown)
+  renderStep1(progress) {
+    return (
+      <DisplayText active={progress == 1}>
+        <h3> Step 2: </h3>
+        <p> You will work with a few close collaborators, who share their "Promising Leads" with you.
+          When your collaborator has a clue that is already in your notebook, it
+            will be shaded grey.
+        </p>
+        <ul>
+          <li>Drag clues from your collaborators notebooks into your own, categorizing them correctly.</li>
+        </ul>
+      </DisplayText>
+    )
   }
 
-  handleKeyDown = event => {
-    const { hasPrev, hasNext, onNext, onPrev} = this.props;
-    if (event.keyCode == 62) {
-      onNext()
-    }
-  }
 
   render() {
     const { hasPrev, hasNext, onNext, onPrev} = this.props;
     const game = new GameDummy();
     const player = game.players[0]
     const nbs = player.get("notebooks")
-    const allow_continue = (
+    var progress = 0
+    var allow_continue = false
+    if (
       // all categories have something in them
       nbs['promising_leads'].clueIDs.length > 0 &&
       nbs['dead_ends'].clueIDs.length > 0 &&
@@ -57,46 +73,62 @@ export default class InstructionStepOne extends React.Component {
       // imply that they successfully dragged from the neighbor
       nbs['promising_leads'].clueIDs.every(cl => solution['promising_leads'].includes(cl)) &&
       nbs['dead_ends'].clueIDs.every(cl => solution['dead_ends'].includes(cl))
-    )
+    ) {
+      progress = 1
+    }
+    if (
+      // all categories have something in them
+      nbs['promising_leads'].clueIDs.length > 1 &&
+      nbs['dead_ends'].clueIDs.length > 1 &&
+      // all the clues in true are correctly categorized
+      // the player starts with no true clues, so true clues in the solution
+      // imply that they successfully dragged from the neighbor
+      nbs['promising_leads'].clueIDs.every(cl => solution['promising_leads'].includes(cl)) &&
+      nbs['dead_ends'].clueIDs.every(cl => solution['dead_ends'].includes(cl))
+    ) {
+      progress = 2
+      allow_continue = true
+    }
+
+    if (progress == 0){
+      player.set("alterIDs", [])
+    }
+
+    
 
 
     return (
         <Container>
             <Description>
                 <h2> Training: Game Play </h2>
-                <p>
-                There has been a burglary! The police chief has put all of her best
-                detectives - including you - on the case.
-                </p>
-                <p>
-                Each detective has interviewed witnesses, and collected some clues.
-                Unfortunately, witnesses make mistakes (and sometimes lie). You don't
-                know which of your clues are true and which are false.
-                </p>
-                <p>
-                Compare your notes with some of the other detectives. Work out
-                who is the burglar, and how they performed the crime.
-                </p>
-                <p>
-                If you think a clue is true, <strong> drag it into the "Promising Leads"
-                section of your notebook</strong>. If you think it is false (or irrelevant),
-                <strong> drag it into the "Dead Ends" section</strong>. You can
-                rearrange your notebook whenever you like.
-                </p>
-                <p>
-                When you drag a collaborator's clue into your notebook, it will
-                still be visible to you in the "Information from your collaborators",
-                but will be shaded grey.
-                </p>
-                <p>
-                Your collaborators can see your "leads". If they think you are
-                on the right track, they can add your clues to their
-                notebooks to share with other team members.
-                </p>
+                <p>In this game, you will join a team of detectives in solving a mystery.</p>
 
-                <h3> To practice, correctly categorize
-                the clues below as "Promising Leads" or "Dead Ends”.
-                </h3>
+                <DisplayText active={progress == 0}>
+                  <h3> Step 1: </h3>
+                  <p> Below is a "Detectives Notebook" containing a number of clues.</p>
+                  <ul>
+                    <li>Drag true and useful clues into the <strong> "Promising Leads" </strong> section of the notebook</li>
+                    <li>Drag false or irrelevant clues into the <strong> "Dead Ends" </strong> section</li>
+                  </ul>
+                </DisplayText>
+
+                <Expand open={progress >= 1}>
+                  <DisplayText active={progress == 1}>
+                    <h3> Step 2: </h3>
+                    <p> You will work with a few close collaborators, who share their "Promising Leads" with you.
+                      When your collaborator has a clue that is already in your notebook, it
+                        will be shaded grey.
+                    </p>
+                    <ul>
+                      <li>Drag clues from your collaborators notebooks into your own, categorizing them correctly.</li>
+                    </ul>
+                  </DisplayText>
+                </Expand>
+
+
+                <DisplayText active={!allow_continue}>
+                  <h4>Practice this below to continue</h4>
+                </DisplayText>
             </Description>
 
             <Boxed>
@@ -108,11 +140,11 @@ export default class InstructionStepOne extends React.Component {
             </Boxed>
 
             <Description>
-             <p>
-             Before you can go to the next page, <strong>correctly categorize
-             the practice clues as "Promising Leads" or "Dead Ends”</strong>.
-             (Did you pay attention to the double negative?)
-             </p>
+               {!allow_continue && <p> Before you can go to the next
+                 page, <strong>correctly categorize the practice clues
+                 as "Promising Leads" or "Dead Ends" </strong>. </p>}
+               {allow_continue && <h3> You are ready to proceed! </h3>}
+
              <p>
                <button type="button" onClick={onNext}
                        disabled={!allow_continue}>

@@ -9,25 +9,33 @@ const Container = styled.div`
   max-width: 650px;
 `
 
+const Reciept = styled.div`
+  margin: 3px;
+  border: 1px solid darkgrey;
+  min-width:60px;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+`
+const RecieptHeading = styled.h3`
+  padding-left: 1rem;
+`
+const ReceiptRow = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
+const ReceiptLeft = styled.p`
+  padding-left: 3rem;
+  min-width: 25rem;
+`
+const ReceiptRight = styled.p`
+`
+
 
 export default class InstructionStepTwo extends React.Component {
 
-  componentDidMount() {
-    document.addEventListener("keydown", this.handleKeyDown)
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleKeyDown)
-  }
-
-  handleKeyDown = event => {
-    if (event.keyCode == 62) {
-      this.props.onNext();
-    }
-  }
-
-  state = { moreClues: "", moreCorrect: "",
-           morePay: "", moreContribution: ""};
+  state = { bob: "", jane: "" };
 
   handleRadioChange = event => {
     const el = event.currentTarget;
@@ -39,8 +47,7 @@ export default class InstructionStepTwo extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    if (this.state.moreClues !== "bob" || this.state.moreCorrect !== "jane" ||
-        this.state.morePay != "jane" || this.state.moreContribution != "c1") {
+    if (this.state.bob !== "zero" || this.state.jane !== "ten") {
           AlertToaster.show({
             message:
               "Sorry, you have one or more mistakes. Please re-read the instructions, and ensure that you have answered the questions correctly."
@@ -57,111 +64,122 @@ export default class InstructionStepTwo extends React.Component {
       <Container>
         <div className="instructions">
           <form onSubmit={this.handleSubmit}>
-          <h2> Training: Incentives </h2>
-          <p>
-          You earn $1.00 for training.
-          If you get a spot in the game, you earn $1.00 for
-          your time, plus individual and team bonuses up to $1.00 each.
-          </p>
+            <h2> Training: Incentives </h2>
 
-          <h3>Individual Bonus</h3>
-          <p>
-          When you categorize a clue as a "Promising Lead", you earn
-          $0.10 if it is true, but <strong>lose</strong> $0.10 if it is false.
-          You find out what you got right after the game is over.
-          </p>
-          <p>
-          For example: Bob and Jane organize their clues like this:
-          </p>
-          <img src="bobjane_notebook.png" height="300px"/>
+            <p>Your payment is calculated as follows:</p>
 
+            <Reciept>
+              <RecieptHeading>Participation</RecieptHeading>
+              <ReceiptRow>
+                <ReceiptLeft>Completing training:</ReceiptLeft>
+                <ReceiptRight>+$1.00</ReceiptRight>
+              </ReceiptRow>
+              <ReceiptRow>
+                <ReceiptLeft>Playing the Game:</ReceiptLeft>
+                <p>+$1.00</p>
+              </ReceiptRow>
+              <RecieptHeading>Individual Bonus</RecieptHeading>
+              <ReceiptRow>
+                <ReceiptLeft>Correct "Leads":</ReceiptLeft>
+                <ReceiptRight><strong>+$0.10 each</strong></ReceiptRight>
+              </ReceiptRow>
+              <ReceiptRow>
+                <ReceiptLeft>Incorrect "Leads":</ReceiptLeft>
+                <ReceiptRight><strong><font color="red"> -$0.10 each</font></strong></ReceiptRight>
+              </ReceiptRow>
+              <ReceiptRow>
+                <ReceiptLeft>Correct "Dead Ends":</ReceiptLeft>
+                <ReceiptRight><font color="grey"> $0.00 each</font></ReceiptRight>
+              </ReceiptRow>
+              <ReceiptRow>
+                <ReceiptLeft>Incorrect "Dead Ends":</ReceiptLeft>
+                <ReceiptRight><font color="grey"> $0.00 each</font></ReceiptRight>
+              </ReceiptRow>
+              <ReceiptRow>
+                <ReceiptLeft></ReceiptLeft>
+                <ReceiptRight><small>(Up to +$1.00 total)</small></ReceiptRight>
+              </ReceiptRow>
+              <RecieptHeading>Team Bonus</RecieptHeading>
+              <ReceiptRow>
+                <ReceiptLeft>Average of individual bonuses:</ReceiptLeft>
+                <ReceiptRight>Up to +$1.00</ReceiptRight>
+              </ReceiptRow>
+              <hr/>
+              <ReceiptRow>
+                <ReceiptLeft>Total:</ReceiptLeft>
+                <ReceiptRight>Up to +$4.00</ReceiptRight>
+              </ReceiptRow>
+
+            </Reciept>
+
+
+
+          <h3>Comprehension Check 1</h3>
           <p>
-          Jane gets +$0.10 for one correct clue. Bob earns +$0.20 for two
-          correct clues, but loses $0.20 for two mistakes. He gets no bonus.
+          Jane has 1 correct lead, 1 correct dead end, and 2 incorrect dead ends.
           </p>
+          <img src="janes_notebook.png" height="300px"/>
+
           <RadioGroup
             layout="row"
-            label="Who had more 'Promising Leads' overall?"
+            label="What is Jane's Individual Bonus?"
             onChange={this.handleRadioChange}
-            selectedValue={this.state.moreClues}
-            name="moreClues"
+            selectedValue={this.state.jane}
+            name="jane"
             required
             inline
           >
               <Radio
-                label="Jane"
-                value="jane"
+                label="$0.00"
+                value="zero"
               />
               <Radio
-                label="Bob"
-                value="bob"
+                label="+$0.10"
+                value="ten"
               />
-
+              <Radio
+                label="+$0.20"
+                value="twenty"
+              />
+              <Radio
+                label="+$0.40"
+                value="forty"
+              />
           </RadioGroup>
 
-          <p></p>
-          <RadioGroup
-            label="Whose 'Promising Leads' were more accurate?"
-            onChange={this.handleRadioChange}
-            selectedValue={this.state.moreCorrect}
-            name="moreCorrect"
-            required
-            inline
-          >
-            <Radio
-              label="Jane"
-              value="jane"
-            />
-            <Radio
-              label="Bob"
-              value="bob"
-            />
-          </RadioGroup>
-
-          <p></p>
-          <RadioGroup
-            label="Who earned a higher individual bonus?"
-            onChange={this.handleRadioChange}
-            selectedValue={this.state.morePay}
-            name="morePay"
-            required
-            inline
-          >
-            <Radio
-              label="Jane"
-              value="jane"
-            />
-            <Radio
-              label="Bob"
-              value="bob"
-            />
-          </RadioGroup>
-
-          <h3>Team bonus</h3>
+          <h3>Comprehension Check 2</h3>
           <p>
-          Your team bonus is the average of all players' individual bonuses. You
-          earn more by helping your team be correct and avoid mistakes.
+          Bob has 2 correct leads and 2 incorrect leads.
           </p>
-          <img src="collaborators.png" height="260px"/>
+          <img src="bobs_notebook.png" height="300px"/>
 
           <RadioGroup
-            label="Which of these two collaborators contributes more to the overall team score?"
+            layout="row"
+            label="What is Bob's Individual Bonus?"
             onChange={this.handleRadioChange}
-            selectedValue={this.state.moreContribution}
-            name="moreContribution"
+            selectedValue={this.state.bob}
+            name="bob"
             required
             inline
           >
             <Radio
-              label="Collaborator 1"
-              value="c1"
+              label="$0.00"
+              value="zero"
             />
             <Radio
-              label="Collaborator 2"
-              value="c2"
+              label="+$0.10"
+              value="ten"
             />
-
+            <Radio
+              label="+$0.20"
+              value="twenty"
+            />
+            <Radio
+              label="+$0.40"
+              value="forty"
+            />
           </RadioGroup>
+
           <p>
           Before you can go to the game, you must <strong>correctly answer all
           of the above questions.</strong>
