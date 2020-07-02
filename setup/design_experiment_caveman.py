@@ -240,19 +240,19 @@ default_config = {
     "factors": [
         {
             "_id": play_8_min_factor_id,
-            "name": "8 Mins",
+            "name": "8_mins",
             "value": 8,
             "factorTypeId": duration_factor_type_id
         },
         {
             "_id": bots39_factor_id,
-            "name": "39 bots",
+            "name": "39_bots",
             "value": 39,
             "factorTypeId": botsCount_factor_type_id
         },
         {
             "_id": nobots_factor_id,
-            "name": "no bots",
+            "name": "no_bots",
             "value": 0,
             "factorTypeId": botsCount_factor_type_id
         }

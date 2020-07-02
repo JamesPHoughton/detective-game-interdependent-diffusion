@@ -11,7 +11,7 @@ import ExitSurvey from "./exit/ExitSurvey";
 import Thanks from "./exit/Thanks";
 import Sorry from "./exit/Sorry";
 
-import NoBatch from "./NoBatch_Paycode.jsx"
+import NoBatch from "./NoBatch_PayCode.jsx"
 
 Empirica.noBatch(NoBatch);
 
