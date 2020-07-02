@@ -24,14 +24,14 @@ export default class Consent extends React.Component {
 
           <p>
           The game is over-subscribed to shorten waiting times.
-         </p>
+          </p>
 
-         <p>
+          <p>
           You will be paid for training, even if you don't get to play.
-        </p>
+          </p>
 
 
-          <h2> What you need to do </h2>
+          <h2> What you need to do:</h2>
           <p>
           1. Please use a computer, not a mobile device.
           </p>
@@ -50,14 +50,17 @@ export default class Consent extends React.Component {
           This HIT is part of a MIT scientific research project. Your decision
           to complete this HIT is voluntary. There is no way for us to identify
           you. The only information we will have, in addition to your responses,
-          is the time at which you completed the survey. The results of the
-          research may be presented at scientific meetings or published in
+          is the time at which you completed the survey. Anonymous behavioral
+          data from this study may be shared in public forums. The results of
+          the research may be presented at scientific meetings or published in
           scientific journals. Clicking on the 'SUBMIT' button on the bottom
           of this page indicates that you are at least 18 years of age and
           agree to complete this HIT voluntarily.
           </i></p>
+          <p>Problems? Email <a href="mailto:detective@mit.edu">detective@mit.edu</a>.</p>
           <br />
           <ConsentButton text="I AGREE" />
+
         </div>
       </Description>
     );

@@ -1,5 +1,4 @@
 import {render} from "react-dom";
-
 import Empirica from "meteor/empirica:core";
 
 import Header from "./header.jsx"
@@ -7,15 +6,12 @@ import Round from "./game/Round";
 import Consent from "./intro/Consent";
 import InstructionStepOne from "./intro/InstructionStepOne";
 import InstructionStepTwo from "./intro/InstructionStepTwo";
-//import MakeTheCase from "./exit/MakeTheCase";
-//import MakeTheCase from "./exit/MakeTheCase_Dropdown";
-import MakeTheCase from "./exit/MakeTheCase_Slider";
-//import ExitSurvey from "./exit/ExitSurvey";
-import ExitSurvey from "./exit/PilotExitSurvey";
+import MakeTheCase from "./exit/MakeTheCase";
+import ExitSurvey from "./exit/ExitSurvey";
 import Thanks from "./exit/Thanks";
 import Sorry from "./exit/Sorry";
 
-import NoBatch from "./NoBatch.jsx"
+import NoBatch from "./NoBatch_Paycode.jsx"
 
 Empirica.noBatch(NoBatch);
 

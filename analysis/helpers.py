@@ -1,3 +1,9 @@
+"""
+These functions help manipulate the experiment data, but are not something
+that needs to be understood to understand how the analysis is performed.
+"""
+
+import numpy as np
 import networkx as nx
 from datetime import datetime
 
@@ -54,7 +60,9 @@ def retrace(game):
 
 
     # trace game
-    t_start = datetime.strptime(game['createdAt'], '%Y-%m-%dT%H:%M:%S.%fZ')
+    #t_start = datetime.strptime(game['createdAt'], '%Y-%m-%dT%H:%M:%S.%fZ')
+    stage = [r for r in game['stages'] if r['name'] == 'response'][0]
+    t_start = datetime.strptime(stage['startTimeAt'], '%Y-%m-%dT%H:%M:%S.%fZ')
 
     for event in game['log']:
         if event['name'] != 'drop': # only consider drop events
@@ -124,3 +132,54 @@ def retrace(game):
         should_have = set([tuple(sorted(clues[clue]['nodes'])) for clue in deads if clue != None])
         has = set([tuple(sorted(edge)) for edge in g.nodes()[player_id]['F'].edges()])
         assert should_have == has
+
+
+
+def flip1(m):
+    """
+    Chooses a single (i0, j0) location in the matrix to 'flip'
+    Then randomly selects a different (i, j) location that creates
+    a quad [(i0, j0), (i0, j), (i, j0), (i, j) in which flipping every
+    element leaves the marginal distributions unaltered.
+    Changes those elements, and returns 1.
+
+    If such a quad cannot be completed from the original position,
+    does nothing and returns 0.
+    """
+    i0 = np.random.randint(m.shape[0])
+    j0 = np.random.randint(m.shape[1])
+
+    level = m[i0, j0]
+    flip = 0 if level == 1 else 1  # the opposite value
+
+    for i in np.random.permutation(range(m.shape[0])):  # try in random order
+        if (i != i0 and  # don't swap with self
+            m[i, j0] != level):  # maybe swap with a cell that holds opposite value
+            for j in np.random.permutation(range(m.shape[1])):
+                if (j != j0 and  # don't swap with self
+                    m[i, j] == level and  # check that other swaps work
+                    m[i0, j] != level):
+                    # make the swaps
+                    m[i0, j0] = flip
+                    m[i0, j] = level
+                    m[i, j0] = level
+                    m[i, j] = flip
+                    return 1
+
+    return 0
+
+def shuffle(m1, n=100):
+    """
+    Randomizes a matrix leaving marginal distributions unaltered
+    """
+    m2 = m1.copy()
+    f_success = np.mean([flip1(m2) for _ in range(n)])
+
+    # f_success is the fraction of flip attempts that succeed, for diagnostics
+    #print(f_success)
+
+    # check the answer
+    assert(all(m1.sum(axis=1) == m2.sum(axis=1)))
+    assert(all(m1.sum(axis=0) == m2.sum(axis=0)))
+
+    return m2

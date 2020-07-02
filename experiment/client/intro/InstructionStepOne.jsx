@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import {GameDummy, solution, clues} from './teaching_game.js'
 import Expand from 'react-expand-animated';
 
+import { Button } from "@blueprintjs/core";
+
 const Description = styled.div`
   max-width: 650px;
 `
@@ -26,7 +28,6 @@ const DisplayText = styled.div`
 
 
 export default class InstructionStepOne extends React.Component {
-
 
   renderStep0(progress) {
     return (
@@ -55,7 +56,6 @@ export default class InstructionStepOne extends React.Component {
       </DisplayText>
     )
   }
-
 
   render() {
     const { hasPrev, hasNext, onNext, onPrev} = this.props;
@@ -93,9 +93,6 @@ export default class InstructionStepOne extends React.Component {
     if (progress == 0){
       player.set("alterIDs", [])
     }
-
-    
-
 
     return (
         <Container>
@@ -140,16 +137,21 @@ export default class InstructionStepOne extends React.Component {
             </Boxed>
 
             <Description>
-               {!allow_continue && <p> Before you can go to the next
-                 page, <strong>correctly categorize the practice clues
+               {!allow_continue && <p> Before continuing, <strong>correctly categorize the practice clues
                  as "Promising Leads" or "Dead Ends" </strong>. </p>}
-               {allow_continue && <h3> You are ready to proceed! </h3>}
+               {allow_continue && <h3> Ready to continue: </h3>}
 
              <p>
-               <button type="button" onClick={onNext}
-                       disabled={!allow_continue}>
+               <Button
+                 type="submit"
+                 intent={"primary"}
+                 rightIcon={"arrow-right"}
+                 onClick={onNext}
+                 disabled={!allow_continue}
+                 >
                  Continue to Incentives
-               </button>
+               </Button>
+
              </p>
           </Description>
         </Container>
