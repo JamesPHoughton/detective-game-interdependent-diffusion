@@ -1,4 +1,4 @@
-,start,exposure_id,player_id,game_id,is_treatment_condition,is_spoke,is_link_or_spur,is_prompt,is_in_leads,is_in_deads,n_exposures,n_existing_leads,in_startup,in_peak,in_tail,in_close,n_rim_connections,n_triangle_paths,n_edges_shared_with_exposers,is_link,is_spur,is_exposed_t0,is_held_t0,stop,adopt_event,forget_event,is_caveman_game
+,start,exposure_id,player_id,game_id,is_treatment_condition,is_spoke,is_link_or_spur,is_prompt,is_in_leads,is_in_deads,n_exposures,n_existing_leads,in_startup,in_peak,in_tail,in_close,n_rim_connections,n_triangle_paths,n_shared_edges,is_link,is_spur,is_exposed_t0,is_held_t0,stop,adopt_event,forget_event,is_caveman_game
 2179,0.0,2tiegBWgWvtYAMmFt_cclue_10_12,2tiegBWgWvtYAMmFt,hRLty7e6fGMsjgzJH,0,0,1,0,0,0,0,4,1,0,0,0,1.0,0,0,0,1,0,0,15.347,0,0,0
 24019,15.347,2tiegBWgWvtYAMmFt_cclue_10_12,2tiegBWgWvtYAMmFt,hRLty7e6fGMsjgzJH,0,0,1,0,0,0,0,5,1,0,0,0,1.0,0,0,0,1,0,0,30.006,0,0,0
 73939,30.006,2tiegBWgWvtYAMmFt_cclue_10_12,2tiegBWgWvtYAMmFt,hRLty7e6fGMsjgzJH,0,0,1,0,0,0,0,5,0,1,0,0,1.0,0,0,0,1,0,0,37.339,0,0,0

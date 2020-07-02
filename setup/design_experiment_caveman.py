@@ -1,6 +1,8 @@
 """
 This design simplifies the multiple different treatment conditions to just two:
-fully interdependent, and as close to independent as possible.
+fully interdependent, and as close to independent as possible. It then replicates
+these conditions in a connected caveman network (in addition to the dodecahedral
+network)
 
 This design puts the treatment and control in the same empirica "game", so that
 individuals are properly randomized between the treatment and control
@@ -11,9 +13,6 @@ about the focal elements provided, rather than random unconnected edges.
 
 Also explicitly includes which options are presented to players after the game
 finishes.
-
-This updates design4 with new spur clues pretested on Mturk
-and the {CrimeScene} style templating
 """
 
 
@@ -30,6 +29,10 @@ import datetime
 
 root_dir = "games/"
 
+def id_gen():
+    """Create a valid id sequence"""
+    return ''.join(random.choices(
+        '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
 
 def make_matched_pair():
     # make social network
@@ -177,20 +180,15 @@ def fill_template(edge, nodes):
     return content[0].upper() + content[1:] + '.'
 
 
-playerCount_factor_type_id = ''.join(random.choices(
-    '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
-duration_factor_type_id = ''.join(random.choices(
-    '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
-gameSetupId_factor_type_id = ''.join(random.choices(
-    '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
-experimentDataFile_factor_type_id = ''.join(random.choices(
-    '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
-test_playerCount_factor_id = ''.join(random.choices(
-    '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
-test_duration_factor_id = ''.join(random.choices(
-    '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
-play_8_min_factor_id = ''.join(random.choices(
-    '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
+playerCount_factor_type_id = id_gen()
+duration_factor_type_id = id_gen()
+gameSetupId_factor_type_id = id_gen()
+experimentDataFile_factor_type_id = id_gen()
+botsCount_factor_type_id = id_gen()
+
+play_8_min_factor_id = id_gen()
+bots39_factor_id = id_gen()
+nobots_factor_id = id_gen()
 
 default_config = {
     "treatments": [
@@ -224,6 +222,14 @@ default_config = {
             "type": "String"
         },
         {
+            "_id": botsCount_factor_type_id,
+            "name": "botsCount",
+            "description": "How many bots should play in the game?",
+            "required": "true",
+            "type": "Integer",
+            "min": 0
+        },
+        {
             "_id": experimentDataFile_factor_type_id,
             "name": "experimentDataFile",
             "description": "which json file to load the experiment data from",
@@ -233,23 +239,24 @@ default_config = {
     ],
     "factors": [
         {
-            "_id": test_playerCount_factor_id,
-            "name": "TestPlayers",
-            "value": 4,
-            "factorTypeId": playerCount_factor_type_id
-        },
-        {
-            "_id": test_duration_factor_id,
-            "name": "playOneMin",
-            "value": 1,
-            "factorTypeId": duration_factor_type_id
-        },
-        {
             "_id": play_8_min_factor_id,
-            "name": "play8Min",
+            "name": "8 Mins",
             "value": 8,
             "factorTypeId": duration_factor_type_id
+        },
+        {
+            "_id": bots39_factor_id,
+            "name": "39 bots",
+            "value": 39,
+            "factorTypeId": botsCount_factor_type_id
+        },
+        {
+            "_id": nobots_factor_id,
+            "name": "no bots",
+            "value": 0,
+            "factorTypeId": botsCount_factor_type_id
         }
+
     ],
     "lobbyConfigs": [
         {
@@ -269,17 +276,16 @@ def generate_experiment_data_file(replications=2):
     n_beliefs = 4  # max manageable for cognitive load
 
     config = copy.deepcopy(default_config)
-    playerCount_factor_id = ''.join(random.choices(
-        '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
+    playerCount_factor_id = id_gen()
     config["factors"].append({
         "_id": playerCount_factor_id,
-        "name": "run_%i_player" % (n_players * 2),
+        "name": "%i_players" % (n_players * 2),
         "value": n_players * 2,
         "factorTypeId": playerCount_factor_type_id
     })
 
     # Experiment parameters
-    experiment_setup_name = 'exp_design6_matched_' + \
+    experiment_setup_name = 'prereg_' + \
         datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
     experiment = {'experiment_setup_name': experiment_setup_name,
@@ -292,8 +298,7 @@ def generate_experiment_data_file(replications=2):
                   }
 
     experiment_filename = "%s.json" % experiment_setup_name
-    experiment_factor_id = ''.join(random.choices(
-        '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
+    experiment_factor_id = id_gen()
     config["factors"].append({
         "_id": experiment_factor_id,
         "name": experiment_setup_name,
@@ -303,10 +308,10 @@ def generate_experiment_data_file(replications=2):
 
     # replication parameters
     for rep in range(replications):
-        game_setup_name = 'panel_%i_matched_pair_%s' % (
+        game_setup_name = 'block_%i_dodec_%s' % (
             rep, experiment_setup_name)
         game_data = {
-            'panelId': 'panel_%i_%s' % (rep, experiment_setup_name),
+            'panelId': 'dodec_%i_%s' % (rep, experiment_setup_name),
             'gameSetupId': game_setup_name,
             "panel": rep,
             "pBroken": "matched pair 0, 1",
@@ -324,8 +329,7 @@ def generate_experiment_data_file(replications=2):
         experiment["games"][game_setup_name] = game_data
 
         # add to the config
-        game_setup_factor_id = ''.join(random.choices(
-            '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
+        game_setup_factor_id = id_gen()
         config['factors'].append({
             "_id": game_setup_factor_id,
             "name": game_setup_name,
@@ -337,7 +341,8 @@ def generate_experiment_data_file(replications=2):
             "factorIds": [game_setup_factor_id,
                           play_8_min_factor_id,
                           playerCount_factor_id,
-                          experiment_factor_id]
+                          experiment_factor_id,
+                          nobots_factor_id]
         })
 
         # make caveman games
@@ -367,10 +372,10 @@ def generate_experiment_data_file(replications=2):
                                        for nb in g.neighbors(n)]  # nodes in control
 
 
-        game_setup_name = 'panel_%i_matched_pair_caveman_%s' % (
+        game_setup_name = 'block_%i_caveman_%s' % (
             rep, experiment_setup_name)
         caveman_game_data = copy.deepcopy(game_data)
-        caveman_game_data['panelId'] = 'caveman_panel_%i_%s' % (rep, experiment_setup_name),
+        caveman_game_data['panelId'] = 'caveman_%i_%s' % (rep, experiment_setup_name),
         caveman_game_data['gameSetupId'] = game_setup_name
         caveman_game_data['neighbors'] = neighbors
 
@@ -378,8 +383,7 @@ def generate_experiment_data_file(replications=2):
         experiment["games"][game_setup_name] = caveman_game_data
 
         # add to the config
-        game_setup_factor_id = ''.join(random.choices(
-            '23456789ABCDEFGHJKLMNPQRSTWXYZabcdefghijkmnopqrstuvwxyz', k=17))
+        game_setup_factor_id = id_gen()
         config['factors'].append({
             "_id": game_setup_factor_id,
             "name": game_setup_name,
@@ -391,7 +395,8 @@ def generate_experiment_data_file(replications=2):
             "factorIds": [game_setup_factor_id,
                           play_8_min_factor_id,
                           playerCount_factor_id,
-                          experiment_factor_id]
+                          experiment_factor_id,
+                          nobots_factor_id]
         })
 
 
@@ -399,13 +404,14 @@ def generate_experiment_data_file(replications=2):
     with open(root_dir + experiment_filename, 'w') as outfile:
         json.dump(experiment, outfile)
 
-    # add the test treatment
+    # add the bots treatment
     config['treatments'].append({
-        "name": "testGame",
+        "name": "playWithBots",
         "factorIds": [game_setup_factor_id,
-                      test_duration_factor_id,
-                      test_playerCount_factor_id,
-                      experiment_factor_id]
+                      play_8_min_factor_id,
+                      playerCount_factor_id,
+                      experiment_factor_id,
+                      bots39_factor_id]
     })
 
     # save an empirica config file for the experiment

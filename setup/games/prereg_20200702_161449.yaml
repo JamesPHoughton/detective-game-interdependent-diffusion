@@ -1,0 +1,943 @@
+factorTypes:
+- _id: epvr34rh6ALfWbbJW
+  description: The number of players in a given game.
+  min: 1
+  name: playerCount
+  required: 'true'
+  type: Integer
+- _id: XaqQ39Kj6ALePnsbW
+  description: The length of the game in minutes.
+  min: 0
+  name: duration
+  required: 'true'
+  type: Integer
+- _id: iRYQQpMEufewzmoYi
+  description: Which game setup to use for the game.
+  name: gameSetupId
+  required: 'false'
+  type: String
+- _id: m8j6tKgdmo4HTb3YK
+  description: How many bots should play in the game?
+  min: 0
+  name: botsCount
+  required: 'true'
+  type: Integer
+- _id: MbsPgRGrtDvGMF2f8
+  description: which json file to load the experiment data from
+  name: experimentDataFile
+  required: 'false'
+  type: String
+factors:
+- _id: 53NcjKtwkMNYQGNxe
+  factorTypeId: XaqQ39Kj6ALePnsbW
+  name: 8 Mins
+  value: 8
+- _id: GaLnm3aP7dDcYhXzN
+  factorTypeId: m8j6tKgdmo4HTb3YK
+  name: 39 bots
+  value: 39
+- _id: zQSdWLakNSPAFiry3
+  factorTypeId: m8j6tKgdmo4HTb3YK
+  name: no bots
+  value: 0
+- _id: QKJ4qgNmsGmEQ4Ybs
+  factorTypeId: epvr34rh6ALfWbbJW
+  name: 40_players
+  value: 40
+- _id: KDCpQ4fG3cEXqLpEX
+  factorTypeId: MbsPgRGrtDvGMF2f8
+  name: prereg_20200702_161449
+  value: prereg_20200702_161449.json
+- _id: 2j9NMHh7ewTQySHPW
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_0_dodec_prereg_20200702_161449
+  value: block_0_dodec_prereg_20200702_161449
+- _id: dGjpSFRRvnBpfcvTm
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_0_caveman_prereg_20200702_161449
+  value: block_0_caveman_prereg_20200702_161449
+- _id: E7cXFdikyfdmhNmhq
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_1_dodec_prereg_20200702_161449
+  value: block_1_dodec_prereg_20200702_161449
+- _id: k7oeTWLBuAjSaJ6Ny
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_1_caveman_prereg_20200702_161449
+  value: block_1_caveman_prereg_20200702_161449
+- _id: SD3mS8NCo32MSy8eA
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_2_dodec_prereg_20200702_161449
+  value: block_2_dodec_prereg_20200702_161449
+- _id: MkocmvMSvKiw3iCpx
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_2_caveman_prereg_20200702_161449
+  value: block_2_caveman_prereg_20200702_161449
+- _id: 3KHqfoYewShcjaj83
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_3_dodec_prereg_20200702_161449
+  value: block_3_dodec_prereg_20200702_161449
+- _id: SLnJRxT8CBusnbDiw
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_3_caveman_prereg_20200702_161449
+  value: block_3_caveman_prereg_20200702_161449
+- _id: 8v8CHXTJx7fwiNsRT
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_4_dodec_prereg_20200702_161449
+  value: block_4_dodec_prereg_20200702_161449
+- _id: DvfR48ES7NjcgTf3b
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_4_caveman_prereg_20200702_161449
+  value: block_4_caveman_prereg_20200702_161449
+- _id: 7kadLqGYc8srChicM
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_5_dodec_prereg_20200702_161449
+  value: block_5_dodec_prereg_20200702_161449
+- _id: PhoAKJNamYscmXEvK
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_5_caveman_prereg_20200702_161449
+  value: block_5_caveman_prereg_20200702_161449
+- _id: Nn7j2nGoNss2Sk5jg
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_6_dodec_prereg_20200702_161449
+  value: block_6_dodec_prereg_20200702_161449
+- _id: bkSCd3yaJZwHXjQy3
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_6_caveman_prereg_20200702_161449
+  value: block_6_caveman_prereg_20200702_161449
+- _id: gQCbNhKTbufxGMDai
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_7_dodec_prereg_20200702_161449
+  value: block_7_dodec_prereg_20200702_161449
+- _id: dYe3yZoEdKGha29mH
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_7_caveman_prereg_20200702_161449
+  value: block_7_caveman_prereg_20200702_161449
+- _id: iitzHzEtYgD6NDcNA
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_8_dodec_prereg_20200702_161449
+  value: block_8_dodec_prereg_20200702_161449
+- _id: 9d4J8DttoDMxk3BCp
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_8_caveman_prereg_20200702_161449
+  value: block_8_caveman_prereg_20200702_161449
+- _id: 5qDEBvRbfdWFKHAZz
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_9_dodec_prereg_20200702_161449
+  value: block_9_dodec_prereg_20200702_161449
+- _id: EAa7Jv9HgFXqYrFBS
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_9_caveman_prereg_20200702_161449
+  value: block_9_caveman_prereg_20200702_161449
+- _id: bzffevp3ig4pZP7FK
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_10_dodec_prereg_20200702_161449
+  value: block_10_dodec_prereg_20200702_161449
+- _id: Kw9dumSeDxTphgYFe
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_10_caveman_prereg_20200702_161449
+  value: block_10_caveman_prereg_20200702_161449
+- _id: 7LGgEbB9GrG9TyvZW
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_11_dodec_prereg_20200702_161449
+  value: block_11_dodec_prereg_20200702_161449
+- _id: dF53F9jBjG76wX6aR
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_11_caveman_prereg_20200702_161449
+  value: block_11_caveman_prereg_20200702_161449
+- _id: dyp93vyXPfBnWjmgn
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_12_dodec_prereg_20200702_161449
+  value: block_12_dodec_prereg_20200702_161449
+- _id: YQnvctc6sYAuRehHF
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_12_caveman_prereg_20200702_161449
+  value: block_12_caveman_prereg_20200702_161449
+- _id: mhzpe4oE9dZNZXETx
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_13_dodec_prereg_20200702_161449
+  value: block_13_dodec_prereg_20200702_161449
+- _id: SRpdFE7jAGNHXb3nP
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_13_caveman_prereg_20200702_161449
+  value: block_13_caveman_prereg_20200702_161449
+- _id: BgQwAQZhmDG9zx6kE
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_14_dodec_prereg_20200702_161449
+  value: block_14_dodec_prereg_20200702_161449
+- _id: LinvJM2c8ZiPgdBJz
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_14_caveman_prereg_20200702_161449
+  value: block_14_caveman_prereg_20200702_161449
+- _id: 9eLKtAWywDxjhK55z
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_15_dodec_prereg_20200702_161449
+  value: block_15_dodec_prereg_20200702_161449
+- _id: oYjiiKsmZmtpgXNg9
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_15_caveman_prereg_20200702_161449
+  value: block_15_caveman_prereg_20200702_161449
+- _id: m62WKGgWfnuqSwhga
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_16_dodec_prereg_20200702_161449
+  value: block_16_dodec_prereg_20200702_161449
+- _id: qKkia5diqbGHNReQG
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_16_caveman_prereg_20200702_161449
+  value: block_16_caveman_prereg_20200702_161449
+- _id: v59Bt7WWkxSnbvvBJ
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_17_dodec_prereg_20200702_161449
+  value: block_17_dodec_prereg_20200702_161449
+- _id: csdWBAJJ5PtEAbjBd
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_17_caveman_prereg_20200702_161449
+  value: block_17_caveman_prereg_20200702_161449
+- _id: fsDEqwqpsqE4s3vgY
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_18_dodec_prereg_20200702_161449
+  value: block_18_dodec_prereg_20200702_161449
+- _id: XNnbmJihyeaNCSxMA
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_18_caveman_prereg_20200702_161449
+  value: block_18_caveman_prereg_20200702_161449
+- _id: vP7fWGSxefoERP2Xp
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_19_dodec_prereg_20200702_161449
+  value: block_19_dodec_prereg_20200702_161449
+- _id: GscEGvs7AwPn9J4Hq
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_19_caveman_prereg_20200702_161449
+  value: block_19_caveman_prereg_20200702_161449
+- _id: dTEvbjoivHNwqouw5
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_20_dodec_prereg_20200702_161449
+  value: block_20_dodec_prereg_20200702_161449
+- _id: HoFsMyi6N6NPkJQfT
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_20_caveman_prereg_20200702_161449
+  value: block_20_caveman_prereg_20200702_161449
+- _id: 9X2jErGQqvSSxjREY
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_21_dodec_prereg_20200702_161449
+  value: block_21_dodec_prereg_20200702_161449
+- _id: 6YQ3uYtu5XAxm4KPf
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_21_caveman_prereg_20200702_161449
+  value: block_21_caveman_prereg_20200702_161449
+- _id: iETdsHvXKnKH6MKjH
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_22_dodec_prereg_20200702_161449
+  value: block_22_dodec_prereg_20200702_161449
+- _id: SF6p5RCRjW7pscEMy
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_22_caveman_prereg_20200702_161449
+  value: block_22_caveman_prereg_20200702_161449
+- _id: 9sDZHP9iT4zsHDXYt
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_23_dodec_prereg_20200702_161449
+  value: block_23_dodec_prereg_20200702_161449
+- _id: 8HfRw6gfA5M3JRcJD
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_23_caveman_prereg_20200702_161449
+  value: block_23_caveman_prereg_20200702_161449
+- _id: oFhWKd5rQZGiLSY7m
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_24_dodec_prereg_20200702_161449
+  value: block_24_dodec_prereg_20200702_161449
+- _id: NZYAhcoTrYu67NPRK
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_24_caveman_prereg_20200702_161449
+  value: block_24_caveman_prereg_20200702_161449
+- _id: hiycLradoaykDx8Bp
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_25_dodec_prereg_20200702_161449
+  value: block_25_dodec_prereg_20200702_161449
+- _id: 3Y5cZdiAPQjdgoKD7
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_25_caveman_prereg_20200702_161449
+  value: block_25_caveman_prereg_20200702_161449
+- _id: qrxx6y2CrFvcyvb3e
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_26_dodec_prereg_20200702_161449
+  value: block_26_dodec_prereg_20200702_161449
+- _id: n4ZuXfJAFM5gdbd98
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_26_caveman_prereg_20200702_161449
+  value: block_26_caveman_prereg_20200702_161449
+- _id: rQ7DKgCRZ3mCXuJLd
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_27_dodec_prereg_20200702_161449
+  value: block_27_dodec_prereg_20200702_161449
+- _id: MSRsXJiQhnawPTzt8
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_27_caveman_prereg_20200702_161449
+  value: block_27_caveman_prereg_20200702_161449
+- _id: 7LBuGFxaicfaaMJ4a
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_28_dodec_prereg_20200702_161449
+  value: block_28_dodec_prereg_20200702_161449
+- _id: ncRgKLfjYFpcKPbux
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_28_caveman_prereg_20200702_161449
+  value: block_28_caveman_prereg_20200702_161449
+- _id: DiZhkDRJaeSXrznNN
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_29_dodec_prereg_20200702_161449
+  value: block_29_dodec_prereg_20200702_161449
+- _id: QnSZAQL6RvKsL8swQ
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_29_caveman_prereg_20200702_161449
+  value: block_29_caveman_prereg_20200702_161449
+- _id: SfiAXXr5YZ4nPxndF
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_30_dodec_prereg_20200702_161449
+  value: block_30_dodec_prereg_20200702_161449
+- _id: 8QQKrdFda6fBTWfFY
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_30_caveman_prereg_20200702_161449
+  value: block_30_caveman_prereg_20200702_161449
+- _id: YeyZ6mX3BJtczeeYW
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_31_dodec_prereg_20200702_161449
+  value: block_31_dodec_prereg_20200702_161449
+- _id: bWwoH4bRkmCZBfkwy
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_31_caveman_prereg_20200702_161449
+  value: block_31_caveman_prereg_20200702_161449
+- _id: Bi2SWuiqxpYxatBhb
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_32_dodec_prereg_20200702_161449
+  value: block_32_dodec_prereg_20200702_161449
+- _id: Wb5zcpeuBFkBpzodM
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_32_caveman_prereg_20200702_161449
+  value: block_32_caveman_prereg_20200702_161449
+- _id: FWdk3zgX3Xfbg8qWb
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_33_dodec_prereg_20200702_161449
+  value: block_33_dodec_prereg_20200702_161449
+- _id: YrfjDnj6CKpq6P3J3
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_33_caveman_prereg_20200702_161449
+  value: block_33_caveman_prereg_20200702_161449
+- _id: DEdx8srkqtnEWwQB4
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_34_dodec_prereg_20200702_161449
+  value: block_34_dodec_prereg_20200702_161449
+- _id: vhYitJMjBLaY3NsxR
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_34_caveman_prereg_20200702_161449
+  value: block_34_caveman_prereg_20200702_161449
+- _id: XP8mXfGoGH8RrdaCE
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_35_dodec_prereg_20200702_161449
+  value: block_35_dodec_prereg_20200702_161449
+- _id: c7ZCSpbkAaMEHzkZ6
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_35_caveman_prereg_20200702_161449
+  value: block_35_caveman_prereg_20200702_161449
+- _id: Zzjp6J838sjNuNfH2
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_36_dodec_prereg_20200702_161449
+  value: block_36_dodec_prereg_20200702_161449
+- _id: uWDWEfBneMGRYaBnB
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_36_caveman_prereg_20200702_161449
+  value: block_36_caveman_prereg_20200702_161449
+- _id: 94fK6dmRGA4jNwrG9
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_37_dodec_prereg_20200702_161449
+  value: block_37_dodec_prereg_20200702_161449
+- _id: QEAzkLN65SA6mwrNX
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_37_caveman_prereg_20200702_161449
+  value: block_37_caveman_prereg_20200702_161449
+- _id: MiahavfJxRsa3vqXN
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_38_dodec_prereg_20200702_161449
+  value: block_38_dodec_prereg_20200702_161449
+- _id: 8arAXCbeyprtcrEt6
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_38_caveman_prereg_20200702_161449
+  value: block_38_caveman_prereg_20200702_161449
+- _id: ofbLgRh3ZZkbXgRxF
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_39_dodec_prereg_20200702_161449
+  value: block_39_dodec_prereg_20200702_161449
+- _id: y8eYc5i3p8GA7rGDz
+  factorTypeId: iRYQQpMEufewzmoYi
+  name: block_39_caveman_prereg_20200702_161449
+  value: block_39_caveman_prereg_20200702_161449
+lobbyConfigs:
+- gameLobbyIds: []
+  timeoutInSeconds: 1500000
+  timeoutStrategy: fail
+  timeoutType: lobby
+treatments:
+- factorIds:
+  - 2j9NMHh7ewTQySHPW
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_0_dodec_prereg_20200702_161449
+- factorIds:
+  - dGjpSFRRvnBpfcvTm
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_0_caveman_prereg_20200702_161449
+- factorIds:
+  - E7cXFdikyfdmhNmhq
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_1_dodec_prereg_20200702_161449
+- factorIds:
+  - k7oeTWLBuAjSaJ6Ny
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_1_caveman_prereg_20200702_161449
+- factorIds:
+  - SD3mS8NCo32MSy8eA
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_2_dodec_prereg_20200702_161449
+- factorIds:
+  - MkocmvMSvKiw3iCpx
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_2_caveman_prereg_20200702_161449
+- factorIds:
+  - 3KHqfoYewShcjaj83
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_3_dodec_prereg_20200702_161449
+- factorIds:
+  - SLnJRxT8CBusnbDiw
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_3_caveman_prereg_20200702_161449
+- factorIds:
+  - 8v8CHXTJx7fwiNsRT
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_4_dodec_prereg_20200702_161449
+- factorIds:
+  - DvfR48ES7NjcgTf3b
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_4_caveman_prereg_20200702_161449
+- factorIds:
+  - 7kadLqGYc8srChicM
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_5_dodec_prereg_20200702_161449
+- factorIds:
+  - PhoAKJNamYscmXEvK
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_5_caveman_prereg_20200702_161449
+- factorIds:
+  - Nn7j2nGoNss2Sk5jg
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_6_dodec_prereg_20200702_161449
+- factorIds:
+  - bkSCd3yaJZwHXjQy3
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_6_caveman_prereg_20200702_161449
+- factorIds:
+  - gQCbNhKTbufxGMDai
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_7_dodec_prereg_20200702_161449
+- factorIds:
+  - dYe3yZoEdKGha29mH
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_7_caveman_prereg_20200702_161449
+- factorIds:
+  - iitzHzEtYgD6NDcNA
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_8_dodec_prereg_20200702_161449
+- factorIds:
+  - 9d4J8DttoDMxk3BCp
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_8_caveman_prereg_20200702_161449
+- factorIds:
+  - 5qDEBvRbfdWFKHAZz
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_9_dodec_prereg_20200702_161449
+- factorIds:
+  - EAa7Jv9HgFXqYrFBS
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_9_caveman_prereg_20200702_161449
+- factorIds:
+  - bzffevp3ig4pZP7FK
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_10_dodec_prereg_20200702_161449
+- factorIds:
+  - Kw9dumSeDxTphgYFe
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_10_caveman_prereg_20200702_161449
+- factorIds:
+  - 7LGgEbB9GrG9TyvZW
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_11_dodec_prereg_20200702_161449
+- factorIds:
+  - dF53F9jBjG76wX6aR
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_11_caveman_prereg_20200702_161449
+- factorIds:
+  - dyp93vyXPfBnWjmgn
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_12_dodec_prereg_20200702_161449
+- factorIds:
+  - YQnvctc6sYAuRehHF
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_12_caveman_prereg_20200702_161449
+- factorIds:
+  - mhzpe4oE9dZNZXETx
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_13_dodec_prereg_20200702_161449
+- factorIds:
+  - SRpdFE7jAGNHXb3nP
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_13_caveman_prereg_20200702_161449
+- factorIds:
+  - BgQwAQZhmDG9zx6kE
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_14_dodec_prereg_20200702_161449
+- factorIds:
+  - LinvJM2c8ZiPgdBJz
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_14_caveman_prereg_20200702_161449
+- factorIds:
+  - 9eLKtAWywDxjhK55z
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_15_dodec_prereg_20200702_161449
+- factorIds:
+  - oYjiiKsmZmtpgXNg9
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_15_caveman_prereg_20200702_161449
+- factorIds:
+  - m62WKGgWfnuqSwhga
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_16_dodec_prereg_20200702_161449
+- factorIds:
+  - qKkia5diqbGHNReQG
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_16_caveman_prereg_20200702_161449
+- factorIds:
+  - v59Bt7WWkxSnbvvBJ
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_17_dodec_prereg_20200702_161449
+- factorIds:
+  - csdWBAJJ5PtEAbjBd
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_17_caveman_prereg_20200702_161449
+- factorIds:
+  - fsDEqwqpsqE4s3vgY
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_18_dodec_prereg_20200702_161449
+- factorIds:
+  - XNnbmJihyeaNCSxMA
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_18_caveman_prereg_20200702_161449
+- factorIds:
+  - vP7fWGSxefoERP2Xp
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_19_dodec_prereg_20200702_161449
+- factorIds:
+  - GscEGvs7AwPn9J4Hq
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_19_caveman_prereg_20200702_161449
+- factorIds:
+  - dTEvbjoivHNwqouw5
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_20_dodec_prereg_20200702_161449
+- factorIds:
+  - HoFsMyi6N6NPkJQfT
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_20_caveman_prereg_20200702_161449
+- factorIds:
+  - 9X2jErGQqvSSxjREY
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_21_dodec_prereg_20200702_161449
+- factorIds:
+  - 6YQ3uYtu5XAxm4KPf
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_21_caveman_prereg_20200702_161449
+- factorIds:
+  - iETdsHvXKnKH6MKjH
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_22_dodec_prereg_20200702_161449
+- factorIds:
+  - SF6p5RCRjW7pscEMy
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_22_caveman_prereg_20200702_161449
+- factorIds:
+  - 9sDZHP9iT4zsHDXYt
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_23_dodec_prereg_20200702_161449
+- factorIds:
+  - 8HfRw6gfA5M3JRcJD
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_23_caveman_prereg_20200702_161449
+- factorIds:
+  - oFhWKd5rQZGiLSY7m
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_24_dodec_prereg_20200702_161449
+- factorIds:
+  - NZYAhcoTrYu67NPRK
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_24_caveman_prereg_20200702_161449
+- factorIds:
+  - hiycLradoaykDx8Bp
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_25_dodec_prereg_20200702_161449
+- factorIds:
+  - 3Y5cZdiAPQjdgoKD7
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_25_caveman_prereg_20200702_161449
+- factorIds:
+  - qrxx6y2CrFvcyvb3e
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_26_dodec_prereg_20200702_161449
+- factorIds:
+  - n4ZuXfJAFM5gdbd98
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_26_caveman_prereg_20200702_161449
+- factorIds:
+  - rQ7DKgCRZ3mCXuJLd
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_27_dodec_prereg_20200702_161449
+- factorIds:
+  - MSRsXJiQhnawPTzt8
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_27_caveman_prereg_20200702_161449
+- factorIds:
+  - 7LBuGFxaicfaaMJ4a
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_28_dodec_prereg_20200702_161449
+- factorIds:
+  - ncRgKLfjYFpcKPbux
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_28_caveman_prereg_20200702_161449
+- factorIds:
+  - DiZhkDRJaeSXrznNN
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_29_dodec_prereg_20200702_161449
+- factorIds:
+  - QnSZAQL6RvKsL8swQ
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_29_caveman_prereg_20200702_161449
+- factorIds:
+  - SfiAXXr5YZ4nPxndF
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_30_dodec_prereg_20200702_161449
+- factorIds:
+  - 8QQKrdFda6fBTWfFY
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_30_caveman_prereg_20200702_161449
+- factorIds:
+  - YeyZ6mX3BJtczeeYW
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_31_dodec_prereg_20200702_161449
+- factorIds:
+  - bWwoH4bRkmCZBfkwy
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_31_caveman_prereg_20200702_161449
+- factorIds:
+  - Bi2SWuiqxpYxatBhb
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_32_dodec_prereg_20200702_161449
+- factorIds:
+  - Wb5zcpeuBFkBpzodM
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_32_caveman_prereg_20200702_161449
+- factorIds:
+  - FWdk3zgX3Xfbg8qWb
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_33_dodec_prereg_20200702_161449
+- factorIds:
+  - YrfjDnj6CKpq6P3J3
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_33_caveman_prereg_20200702_161449
+- factorIds:
+  - DEdx8srkqtnEWwQB4
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_34_dodec_prereg_20200702_161449
+- factorIds:
+  - vhYitJMjBLaY3NsxR
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_34_caveman_prereg_20200702_161449
+- factorIds:
+  - XP8mXfGoGH8RrdaCE
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_35_dodec_prereg_20200702_161449
+- factorIds:
+  - c7ZCSpbkAaMEHzkZ6
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_35_caveman_prereg_20200702_161449
+- factorIds:
+  - Zzjp6J838sjNuNfH2
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_36_dodec_prereg_20200702_161449
+- factorIds:
+  - uWDWEfBneMGRYaBnB
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_36_caveman_prereg_20200702_161449
+- factorIds:
+  - 94fK6dmRGA4jNwrG9
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_37_dodec_prereg_20200702_161449
+- factorIds:
+  - QEAzkLN65SA6mwrNX
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_37_caveman_prereg_20200702_161449
+- factorIds:
+  - MiahavfJxRsa3vqXN
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_38_dodec_prereg_20200702_161449
+- factorIds:
+  - 8arAXCbeyprtcrEt6
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_38_caveman_prereg_20200702_161449
+- factorIds:
+  - ofbLgRh3ZZkbXgRxF
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_39_dodec_prereg_20200702_161449
+- factorIds:
+  - y8eYc5i3p8GA7rGDz
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - zQSdWLakNSPAFiry3
+  name: block_39_caveman_prereg_20200702_161449
+- factorIds:
+  - y8eYc5i3p8GA7rGDz
+  - 53NcjKtwkMNYQGNxe
+  - QKJ4qgNmsGmEQ4Ybs
+  - KDCpQ4fG3cEXqLpEX
+  - GaLnm3aP7dDcYhXzN
+  name: playWithBots
