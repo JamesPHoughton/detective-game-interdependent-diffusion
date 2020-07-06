@@ -17,6 +17,8 @@ experiment as a whole.
 - `Estimate continuous-time outcome measures.ipynb` (written using R) uses
 cox regression to infer the factors influencing adoption
 
+- `Mediation analysis.ipynb` conducts a mediation analysis on the effects of interdependence on the described mechanisms.
+
 - `helpers.py` contains functions that help work with the data or implement
 generic math functions, but which are not about the theory of the experiment
 itself.
