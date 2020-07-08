@@ -23,6 +23,10 @@ export default class NoBatch extends React.Component {
               Please enter the code <strong> NB1246 </strong> to receive
               your $0.10 showing up payment.
             </p>
+            <p>
+              I will be running experiments on the hour from 10am to 6pm EDT
+              throughout the week. I hope you can sign up to play again.
+            </p>
             {Meteor.isDevelopment ? (
               <p>
                 Go to <Link to="/admin">Admin</Link> to get started.
