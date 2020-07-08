@@ -17,3 +17,8 @@ the actual outcomes of the experiment that we care about
 
 - `experiment` contains the actual Empirica project that serves the experiemnt
 to participants
+
+
+# Preregistration
+
+The experiment described in this repository was preregistered at https://osf.io/239ns
