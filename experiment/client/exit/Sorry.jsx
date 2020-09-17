@@ -40,11 +40,17 @@ export default class Sorry extends React.Component {
             : player.exitStatus === "gameFull"
             ? (<Description>
                 <p>
-                All the games filled up too quickly.
+                I'm sorry, all the games filled up too quickly.
                 </p>
                 <p>
                 Please submit <strong>DGFull_7hl8Gp2</strong> as the survey code in
                 order to receive the $1.00 training payment.
+                </p>
+                <p>
+                Please try again, I will be launching games on the
+                hour from 11am to 6pm EDT for the rest of the week. Look for
+                signup HITs in the hour before game launch, and try to arrive
+                right on time.
                 </p>
               </Description>
               )
