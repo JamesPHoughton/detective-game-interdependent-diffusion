@@ -3,7 +3,9 @@ Files in this folder perform the analysis of experiment results.
 
 
 ### Code
-- `Process and anonymize Empirica export` takes raw `.jsonl` format data and
+- `Start here to explore data` gives a walkthrough of the processed `.json` data format
+
+- `Process and anonymize Empirica export` takes raw `.jsonl` format data (not included in this repo) and
 creates an anonymized `.json` file for each block of games (network/treatment
 sets)
 
